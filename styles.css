@@ -154,8 +154,8 @@ p:nth-of-type(5) {
   }
   .heart {
     position: absolute;
-    top: 145%;
-    left: 85%;
+    top: 170%;
+    left: 800%;
     width: 15px;
     height: 15px;
     background: var(--heart-color);
