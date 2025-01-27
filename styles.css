@@ -1,3 +1,14 @@
+:root{
+  --primary: #fff;
+  --bg-color: rgb(5, 53, 61);
+  --bg-envelope-color: #f5edd1;
+  --envelope-tab: #ecdeb8;
+  --envelope-cover: #e6cfa7;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --txt-color: #444;
+  --heart-color: rgb(252, 8, 231);
+}
+
 /* General Reset for Mobile */
 body {
     font-family: Arial, sans-serif;
@@ -130,8 +141,12 @@ footer {
         padding: 8px;
     }
 
+    
+
     .container {
         padding: 15px; /* Reduce padding */
+        display: grid;
+        place-items: center;
     }
 }
 
@@ -186,6 +201,12 @@ footer {
     transition: all 1s ease-in-out;
     box-shadow: 0 0 5px var(--shadow-color);
     padding: 10px;
+
+    .envelope > .letter > .text {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: var(--txt-color);
+  text-align: left;
+  font-size: 10px;
 }
 
 /* Heart Styling */
