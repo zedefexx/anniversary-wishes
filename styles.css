@@ -17,6 +17,10 @@ body {
     place-items: center;
 }
 
+p {
+    font-size: 30px;
+}
+
 .container2 {
         height: 100vh;
         max-width: 2000px;
