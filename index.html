@@ -8,51 +8,44 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Container for animated text -->
     <div class="container">
-        <p class="animated-text">also dont u ever think that u r never enough for me okkey</p>
-        <p class="animated-text">lets continue to forgive & root for the life which we have dreamed of :)</p>
-        <h1 class="animated-text">tnx for staying with me the whole time (^-^)</h1><br>
+        <p class="animated-text">also don't you ever think that you're never enough for me, okay?</p>
+        <p class="animated-text">let's continue to forgive & root for the life we've dreamed of :)</p>
+        <h1 class="animated-text">thanks for staying with me the whole time (^-^)</h1><br>
         <br>
         <br>
-        <p class="animated-text">its been a year already ,right?</p>
+        <p class="animated-text">It's been a year already, right?</p>
+    </div>
 
-            </div>
-
+    <!-- Main content container -->
     <div class="container">
         <div class="animated-text">
             <div class="text-size">
-        <p>I don’t know the perfect way to celebrate this,<br> but I want you to know that I’ve poured all my heart <br>into making this special for you, for us. I know we have
-            our <br> limitations,and things may not be grand or perfect, but every little thing I do, I do with you in mind. It’s not about the celebration itself—it’s about celebrating you, the love we share, and the beautiful bond that makes my life so much brighter.
-
-            Life is unpredictable, and I won’t pretend to know what next year holds. Maybe we’ll face challenges; maybe we’ll have moments where we’re upset with each other or going through tough times. But no matter what comes our way, one thing I can promise is that my love for you will never waver. You are the most important part of my life, my constant in a world full of uncertainty.
-            
-            Today, let’s forget about the what-ifs and focus on creating beautiful, unforgettable memories. Let’s laugh, smile, and savor every second of this moment, knowing that it’s ours to cherish forever. I want you to always remember that you are more than enough for me. You don’t have to be perfect, and you don’t have to try to impress me—you, just as you are, are my dream come true.
-            
-            You are my first thought in the morning and the last one before I sleep. You are the reason I smile when the day feels heavy and the person I thank the stars for every single night. You are my peace, my joy, and my heart. I will always choose you, in this moment, in the next, and in every lifetime we could ever share.
-            
-            So, let’s celebrate not just today, but the love that brings us together and makes every moment so precious. Thank you for being you—my love, my everything, my forever.
-                                 
-                                </p>
-            </div>
+                <p>I don’t know the perfect way to celebrate this, but I want you to know that I’ve poured all my heart into making this special for you, for us. I know we have our limitations, and things may not be grand or perfect, but every little thing I do, I do with you in mind. It’s not about the celebration itself—it’s about celebrating you, the love we share, and the beautiful bond that makes my life so much brighter.</p>
+                <p>Life is unpredictable, and I won’t pretend to know what next year holds. Maybe we’ll face challenges; maybe we’ll have moments where we’re upset with each other or going through tough times. But no matter what comes our way, one thing I can promise is that my love for you will never waver. You are the most important part of my life, my constant in a world full of uncertainty.</p>
+                <p>Today, let’s forget about the what-ifs and focus on creating beautiful, unforgettable memories. Let’s laugh, smile, and savor every second of this moment, knowing that it’s ours to cherish forever. I want you to always remember that you are more than enough for me. You don’t have to be perfect, and you don’t have to try to impress me—you, just as you are, are my dream come true.</p>
+                <p>You are my first thought in the morning and the last one before I sleep. You are the reason I smile when the day feels heavy and the person I thank the stars for every single night. You are my peace, my joy, and my heart. I will always choose you, in this moment, in the next, and in every lifetime we could ever share.</p>
+                <p>So, let’s celebrate not just today, but the love that brings us together and makes every moment so precious. Thank you for being you—my love, my everything, my forever.</p>
             </div>
         </div>
+    </div>
 
-
+    <!-- Final message -->
     <p class="text">
-        achuuuuuuuuuu, heres a small gift for u (^-^) i love u soooooooooooooooooooooooooooooooooooooooooooooooooooooo muchhhhhh!. mwaaaahhhhhhhhhhhhh
+        achuuuuuuuuuu, here's a small gift for you (^-^) I love you soooooooooooooooooooooooooooooooooooooooooooooooooooooo muchhhhhh! Mwaaaahhhhhhhhhhhhh
     </p>
 
-
+    <!-- Envelope animation -->
     <div class="container">
         <div class="envelope-wrapper">
             <div class="envelope">
                 <div class="letter">
                     <div class="text">
-                        <div class="object" >
-                        <strong>Dear Person.</strong>
-                        <p>
-                            No matter what happens, you are my constant, my joy, my strength, and the greatest reason I smile every day.
-                        </p>
+                        <div class="object">
+                            <strong>Dear Person,</strong>
+                            <p>No matter what happens, you are my constant, my joy, my strength, and the greatest reason I smile every day.</p>
                         </div>
                     </div>
                 </div>
@@ -61,7 +54,7 @@
         </div>
     </div>
 
-
+    <!-- Interactive envelope flap -->
     <script>
         const envelope = document.querySelector('.envelope-wrapper');
         envelope.addEventListener('click', () => {
@@ -69,43 +62,46 @@
         });
     </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible"); // Add the visible class
-                } else {
-                    entry.target.classList.remove("visible"); // Optional: remove the class if it scrolls out
-                }
+    <!-- Intersection observer for scroll-based animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    } else {
+                        entry.target.classList.remove("visible");
+                    }
+                });
+            });
+
+            // Target all elements with the .object class for animation
+            const items = document.querySelectorAll(".object");
+            items.forEach((item) => observer.observe(item));
+        });
+    </script>
+
+    <!-- Letter animation with delay -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const textElement = document.querySelector('.text');
+            const text = textElement.textContent;
+            textElement.innerHTML = ''; // Clear original text
+
+            // Wrap each letter in a span and apply animation delay
+            [...text].forEach((letter, index) => {
+                const span = document.createElement('span');
+                span.textContent = letter;
+                span.style.animationDelay = `${index * 0.1}s`; // Add delay
+                textElement.appendChild(span);
             });
         });
+    </script>
 
-        // Target all elements you want to animate
-        const items = document.querySelectorAll(".object");
-        items.forEach((item) => observer.observe(item));
-    });
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const textElement = document.querySelector('.text');
-        const text = textElement.textContent;
-        textElement.innerHTML = ''; // Clear original text
-
-        // Wrap each letter in a span
-        [...text].forEach((letter, index) => {
-            const span = document.createElement('span');
-            span.textContent = letter;
-            span.style.animationDelay = `${index * 0.1}s`; // Add delay
-            textElement.appendChild(span);
-        });
-    });
-</script>
-
-<footer>
-    <p>Made with 💖 by your future huseeeeeeeeeeeeee 😸</p>
-</footer>
+    <!-- Footer -->
+    <footer>
+        <p>Made with 💖 by your future huseeeeeeeeeeeeee 😸</p>
+    </footer>
 
 </body>
 </html>
