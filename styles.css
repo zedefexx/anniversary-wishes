@@ -159,9 +159,7 @@ p:nth-of-type(5) {
   }
   .heart {
     position: absolute;
-    item-align: center;
-      top: 100%;
-      left: 100%;
+    top: 100%;
     width: 15px;
     height: 15px;
     background: var(--heart-color);
