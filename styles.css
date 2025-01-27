@@ -29,6 +29,10 @@ body {
 
 }
 
+p {
+    font-size: 10px;
+}
+
 .object {
     opacity: 0;
     transform: translateY(50px); /* Start slightly off-screen */
