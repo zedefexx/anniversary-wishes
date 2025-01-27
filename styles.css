@@ -134,3 +134,105 @@ footer {
         padding: 15px; /* Reduce padding */
     }
 }
+
+/* Envelope Wrapper */
+.container > .envelope-wrapper {
+    max-width: 100%; /* Make it responsive */
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope-wrapper > .envelope {
+    position: relative;
+    width: 250px; /* Adjusted width for smaller screens */
+    height: 180px; /* Adjusted height */
+    margin: auto;
+}
+
+.envelope-wrapper > .envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    border-top: 90px solid var(--envelope-tab); /* Scaled down */
+    border-right: 125px solid transparent;
+    border-left: 125px solid transparent;
+    transform-origin: top;
+    transition: all 0.5s ease-in-out 0.7s;
+}
+
+.envelope-wrapper > .envelope::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 0px;
+    height: 0px;
+    border-top: 90px solid transparent;
+    border-right: 125px solid var(--envelope-cover); /* Adjusted size */
+    border-bottom: 80px solid var(--envelope-cover);
+    border-left: 125px solid var(--envelope-cover);
+}
+
+.envelope > .letter {
+    position: absolute;
+    right: 15%;
+    bottom: 0;
+    width: 70%; /* Adjusted size */
+    height: 70%; /* Adjusted height */
+    background: var(--primary);
+    text-align: center;
+    transition: all 1s ease-in-out;
+    box-shadow: 0 0 5px var(--shadow-color);
+    padding: 10px;
+}
+
+/* Heart Styling */
+.heart {
+    position: absolute;
+    top: 100%;
+    width: 12px; /* Scaled down size */
+    height: 12px;
+    background: var(--heart-color);
+    z-index: 4;
+    transform: translate(-50%, -20%) rotate(45deg);
+    transition: transform 0.5s ease-in-out 1s;
+    box-shadow: 0 1px 6px var(--shadow-color);
+    cursor: pointer;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--heart-color);
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -6px; /* Adjusted for smaller size */
+}
+
+.heart:after {
+    right: 6px; /* Adjusted for smaller size */
+}
+
+/* On Envelope Open */
+.flap > .envelope::before {
+    transform: rotateX(180deg);
+    z-index: 0;
+}
+
+.flap > .envelope > .letter {
+    bottom: 80px; /* Adjusted for smaller screens */
+    transform: scale(1.3); /* Scale effect for mobile */
+    transition-delay: 1s;
+}
+
+.flap > .heart {
+    transform: rotate(90deg);
+    transition-delay: 0.4s;
+}
